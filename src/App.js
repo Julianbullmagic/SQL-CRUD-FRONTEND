@@ -14,7 +14,7 @@ function App() {
   const [employeeList, setEmployeeList] = useState([]);
 
   const addEmployee = () => {
-    Axios.post("https://cors-anywhere.herokuapp.com/https://cheapestpetrol.herokuapp.com/create", {
+    Axios.post("https://cheapestpetrol.herokuapp.com/create", {
       name: name,
       age: age,
       country: country,
@@ -35,13 +35,13 @@ function App() {
   };
 
   const getEmployees = () => {
-    Axios.get("https://cors-anywhere.herokuapp.com/https://cheapestpetrol.herokuapp.com/employees").then((response) => {
+    Axios.get("https://cheapestpetrol.herokuapp.com/employees").then((response) => {
       setEmployeeList(response.data);
     });
   };
 
   const updateEmployeeWage = (id) => {
-    Axios.put("https://cors-anywhere.herokuapp.com/https://cheapestpetrol.herokuapp.com/update", { wage: newWage, id: id }).then(
+    Axios.put("https://cheapestpetrol.herokuapp.com/update", { wage: newWage, id: id }).then(
       (response) => {
         setEmployeeList(
           employeeList.map((val) => {
@@ -62,7 +62,7 @@ function App() {
   };
 
   const deleteEmployee = (id) => {
-    Axios.delete(`https://cors-anywhere.herokuapp.com/https://cheapestpetrol.herokuapp.com/delete/${id}`).then((response) => {
+    Axios.delete(`https://cheapestpetrol.herokuapp.com/delete/${id}`).then((response) => {
       setEmployeeList(
         employeeList.filter((val) => {
           return val.id != id;
